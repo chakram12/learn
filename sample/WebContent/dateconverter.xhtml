@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+ <title> Standard Converters for date and time</title>
+</h:head> 
+<h:body> 
+ <b><h:outputText value="Formating the current date and time-" /> </b><br/>
+   <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime type="date" dateStyle="medium" />
+</h:outputText>
+<br />
+ 
+    <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime type="date" dateStyle="full" />
+</h:outputText>
+ <br />
+    <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime type="time" dateStyle="full" />
+</h:outputText>
+  <br />
+    <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime type="date" pattern="dd/mm/yyyy" />
+</h:outputText>
+  <br />
+  
+   <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime  dateStyle="full" pattern="yyyy-mm-dd" />
+</h:outputText>
+  <br />
+   
+    <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime  dateStyle="full" pattern="yyyy-MM-dd 'at' HH:mm:ss z" />
+</h:outputText>
+  <br />
+  
+   <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime  dateStyle="full" pattern="h:mm a" />
+</h:outputText>
+  <br />
+  
+   <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime  dateStyle="long" timeZone="EST" type="both"/>
+</h:outputText>
+  <br />
+  
+   <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime  locale="ro" timeStyle="long" type="both" dateStyle="full"/>
+</h:outputText>
+  <br />
+  
+  <h:outputText value="#{datetimeBean.currentdate}" >
+    <f:convertDateTime  locale="de" timeStyle="short" type="both" dateStyle="full"/>
+</h:outputText>
+
+
+
+</h:body> 
+</html>

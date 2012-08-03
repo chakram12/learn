@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Aug, 2011 12:13:55 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ku.learn.hibernate.persistence.AccountUser" table="ACCOUNT_USER">
+        <id name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="givenname" type="java.lang.String">
+            <column name="GIVEN_NAME" />
+        </property>
+    </class>
+</hibernate-mapping>

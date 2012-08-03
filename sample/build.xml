@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." name="ant-nsdece">
+
+
+<property environment="env"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="websource" value="."/>
+	<property name="build" value="${websource}/build"/>
+	<property name="target" value="${build}/target"/>
+	<property name="javaClasses" value="${target}/classes"/>
+	<property name="sample" value="${target}/sample"/>
+	<property name="project_lib" value="${websource}\WebContent\WEB-INF\lib"/>
+	<property name="JBOSS_HOME" value="/usr/jboss-6.0.0.Final"/>
+
+<!-- Define the CLASSPATH -->
+	<path id="ant-nsdece.classpath">
+		<fileset dir="${project_lib}" includes="*.jar" />
+	</path>
+
+<!-- START OF THE BUILD PROCESS-->	
+	
+	<target name="clean">
+		<delete dir="build"/>
+	</target>
+
+<!-- - - - - - - - - - - - - - - - - - 
+	          target: initialize the build process                      
+	         - - - - - - - - - - - - - - - - - -->
+	<target depends="clean" name="init">
+		<mkdir dir="${sample}"/>
+		<copy includeemptydirs="false" todir="${sample}">
+			<fileset dir="${websource}/WebContent">
+				<exclude name="**/*.launch"/>
+				<exclude name="**/*.java"/>
+				
+			</fileset>
+		</copy>
+	</target>
+
+<!-- - - - - - - - - - - - - - - - - - 
+	          target: compile the java sources                      
+	         - - - - - - - - - - - - - - - - - -->
+	<target depends="init" name="compile">
+		<mkdir dir="${javaClasses}"/>
+		<mkdir dir="${sample}\WEB-INF\classes"/>
+		<javac srcdir="${websource}\src" destdir="${javaClasses}" debug="true">
+			<classpath refid="ant-nsdece.classpath"/>
+		</javac>
+		<copy includeemptydirs="false" todir="${sample}\WEB-INF\classes">
+			<fileset dir="${javaClasses}"/>
+		</copy>
+		<mkdir dir="${sample}\WEB-INF\lib"/>
+		<copy includeemptydirs="false" todir="${sample}\WEB-INF\lib">
+	         <fileset dir="${project_lib}" includes="*.jar">
+	        	<exclude name="**/xercesImpl-2.5.0.jar"/>
+	        	<exclude name="**/xml-apis-1.0.b2.jar"/>
+	        	<exclude name="**/xmlParserAPIs-2.2.1.jar"/>
+	         	<exclude name="**/jsf-impl-2.0.0-RC.jar"/>
+	         	<exclude name="**/jsf-api-2.0.0-RC.jar"/>
+	         	<exclude name="**/jsr250-api-1.0.jar"/>
+	         	<exclude name="**/jstl-1.2.jar"/>
+	         	<exclude name="**/log4j-1.2.15.jar"/>
+	         	<exclude name="**/servlet-api-2.4.jar"/>
+	        </fileset>
+	     </copy>
+	</target>
+
+	
+
+
+<!-- - - - - - - - - - - - - - - - - - 
+		          target: deploy into jboss server                      
+		         - - - - - - - - - - - - - - - - - -->	
+	<target depends="compile" name="build">
+		<war destfile="${target}/sample.war" needxmlfile="false">
+			<fileset dir="${sample}">
+				<exclude name="**/WEB-INF/libs/**"/>
+			</fileset>
+		</war>
+		<copy todir="${env.JBOSS_HOME}\standalone\deployments">
+			<fileset dir="${target}">
+				<include name="sample.war" />
+			</fileset>
+		</copy>
+	</target>
+
+
+<!-- END OF THE BUILD PROCESS-->	
+
+
+</project>

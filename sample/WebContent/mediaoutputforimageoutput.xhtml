@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+    
+    <h:head>
+    	<style type="text/css">
+    		html {
+    height: 100%;
+}
+body {
+    background: url("/images/body-bg.jpg") repeat scroll left bottom #94AEBC;
+    font: 12px "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+fieldset {
+    margin: 0;
+}
+ul.layout {
+    list-style: none outside none;
+}
+a {
+    outline: medium none;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+p {
+    margin: 0;
+    padding: 0 0 10px;
+}
+#page {
+    margin: 0 auto;
+    width: 987px;
+}
+#header {
+    background: url("/images/header-bg.png") no-repeat scroll left top transparent;
+    height: 90px;
+}
+#header .logo {
+    float: left;
+    margin-left: 7px;
+    text-decoration: none;
+}
+#header .logo img {
+    border: medium none;
+}
+#header .right-controls {
+    float: right;
+}
+#header ul.top-links {
+    margin: 5px 15px 0 0;
+    text-align: right;
+}
+#header ul.top-links li {
+    display: inline;
+    font-size: 11px;
+}
+#header ul.top-links li a {
+    background: url("/images/sep.gif") no-repeat scroll right center transparent;
+    color: #FFFFFF;
+    font: 11px "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+    padding: 0 8px 0 3px;
+}
+#header ul.top-links li.last a {
+    background: none repeat scroll 0 0 transparent;
+    padding: 0 0 0 3px;
+}
+#header ul.top-links li.download-link a {
+    color: #ECCB7B;
+}
+#header ul#skin-menu {
+    color: #89A0BE;
+    cursor: default;
+    font-weight: bold;
+    margin: 38px 15px 0 0;
+    text-align: right;
+}
+#header ul#skin-menu li {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    height: 25px;
+    margin-left: 4px;
+    padding-left: 5px;
+}
+#header ul#skin-menu li a {
+    color: #89A0BE;
+}
+#header ul#skin-menu li span {
+    display: inline-block;
+    font: bold 12px "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+    height: 25px;
+    padding: 3px 5px 0 0;
+}
+#header ul#skin-menu li span:hover {
+    text-decoration: underline;
+}
+#header ul#skin-menu li.label span {
+    color: #999999;
+    cursor: default;
+    font-weight: normal;
+}
+#header ul#skin-menu li.current-skin {
+    background: url("/images/select-skin-button.png") no-repeat scroll left -75px transparent;
+}
+#header ul#skin-menu li.current-skin span {
+    background: url("/images/select-skin-button.png") repeat-x scroll right 0 transparent;
+    color: #FFFFFF;
+}
+#header ul#skin-menu li.label span:hover, #header ul#skin-menu li.current-skin span:hover {
+    text-decoration: none;
+}
+#page-content {
+    background: url("/images/page-bg.png") repeat-y scroll 0 0 transparent;
+    height: 100%;
+    min-height: 520px;
+    padding: 13px 20px 5px;
+}
+#page-content .left-menu {
+    float: left;
+    margin-right: 10px;
+    min-height: 450px;
+    width: 235px;
+}
+#page-content .content-container {
+    float: right;
+    width: 700px;
+}
+#page-content .content-container fieldset.example-cnt {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: -moz-use-text-color #DDDDDD #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    margin: 0;
+    min-height: 470px;
+    padding: 15px 20px 10px;
+}
+.clear {
+    clear: both;
+    height: 0;
+}
+#footer {
+    background: url("/images/footer.png") no-repeat scroll left top transparent;
+    color: #000000;
+    padding: 15px 20px 10px;
+    text-align: center;
+}
+.source, div.rf-log {
+    width: 650px;
+}
+a.show, a.hide {
+    color: #5F9CD0;
+    display: block;
+    font: bold 12px "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+}
+.left-menu .rf-pm {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #B0BDC5 #B0BDC5 -moz-use-text-color;
+    border-style: solid solid none;
+    border-width: 1px 1px 0;
+}
+.left-menu .rf-pm .rf-pm-top-gr {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color #969B9E;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    margin: 0;
+    padding: 0;
+}
+.left-menu .rf-pm .rf-pm-top-gr-hdr {
+    background: url("../images/pmenu_bg.png") repeat-x scroll left top #C6CACC;
+    padding: 3px 1px 2px 3px;
+}
+.left-menu .rf-pm .rf-pm-top-gr-hdr:hover {
+    background: url("../images/pmenu_bg.png") repeat-x scroll left top #C6CACC;
+}
+.left-menu .rf-pm .rf-pm-top-gr-ico {
+    display: none;
+}
+.left-menu .rf-pm .rf-pm-top-gr-lbl {
+    color: #273945;
+    font-family: "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+    margin-left: 4px;
+}
+.left-menu .rf-pm .rf-pm-top-gr-lbl:hover {
+    color: #5A8EBA;
+}
+.left-menu .rf-pm-exp {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.left-menu .rf-pm-exp .rf-pm-itm {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color #DDDDDD;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+}
+.left-menu .rf-pm-exp .rf-pm-itm:hover {
+    background: none repeat scroll 0 0 transparent;
+}
+.left-menu .rf-pm-exp .rf-pm-itm-lbl:hover {
+    color: #5F9CD0;
+}
+.left-menu .rf-pm-exp .rf-pm-itm-sel, .left-menu .rf-pm-exp .rf-pm-itm-sel:hover {
+}
+.left-menu .rf-pm-exp .rf-pm-itm-lbl {
+    color: #305F7B;
+    font: 11px "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+}
+.left-menu .rf-pm-exp .rf-pm-itm-sel .rf-pm-itm-lbl {
+    color: #5F9CD0;
+    font-weight: bold;
+}
+.left-menu .rf-pm-exp .rf-pm-itm-ico {
+    padding: 0 !important;
+    width: 5px;
+}
+.navigation .rf-tab-hdr-tabline-vis {
+    background: none repeat scroll 0 0 #EBF6FD;
+    border: 0 none;
+    height: 31px;
+    padding: 0;
+}
+.navigation .rf-tab-hdr {
+    border: 1px solid #DDDDDD;
+    margin-right: 3px;
+    padding: 6px 10px 0;
+}
+.navigation .rf-tab-hdr-act {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 0 none;
+    color: #5F9CD0;
+}
+.navigation .rf-tab-hdr-act .rf-tab-lbl {
+    font-weight: bold;
+}
+.navigation .rf-tab-hdr-inact {
+    background: url("../images/pmenu_bg.png") repeat-x scroll left top #C6CACC;
+    border: 1px solid #BEC3C7;
+}
+.navigation .rf-tab-hdr-spcr {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 0 3px 0 0;
+}
+.navigation .rf-tab-lbl {
+    font: 12px "Lucida Sans Unicode","Lucida Grande",Geneva,Verdana,Arial,sans-serif;
+}
+textarea[disabled], input[type="text"][disabled], input[type="password"][disabled], select[disabled] {
+}
+    		
+    	</style>
+    </h:head>
+    <h:form>
+        <h:panelGrid columns="6">
+            <h:outputText value="Color 1" />
+            <h:selectOneMenu value="#{mediaData.colorIndex1}">
+                <f:selectItem itemLabel="Red" itemValue="0"/>
+                <f:selectItem itemLabel="Dark Blue" itemValue="1"/>
+                <f:selectItem itemLabel="Green" itemValue="2"/>
+                <f:selectItem itemLabel="Yellow" itemValue="3"/>
+                <f:selectItem itemLabel="Blue" itemValue="4"/>               
+            </h:selectOneMenu>
+            <h:outputText value="Color 1" />
+            <h:selectOneMenu value="#{mediaData.colorIndex2}">
+                <f:selectItem itemLabel="Red" itemValue="0"/>
+                <f:selectItem itemLabel="Dark Blue" itemValue="1"/>
+                <f:selectItem itemLabel="Green" itemValue="2"/>
+                <f:selectItem itemLabel="Yellow" itemValue="3"/>
+                <f:selectItem itemLabel="Blue" itemValue="4"/>                       
+            </h:selectOneMenu>
+            <h:outputText value="Color 1" />
+            <h:selectOneMenu value="#{mediaData.colorIndex3}">
+                <f:selectItem itemLabel="Red" itemValue="0"/>
+                <f:selectItem itemLabel="Dark Blue" itemValue="1"/>
+                <f:selectItem itemLabel="Green" itemValue="2"/>
+                <f:selectItem itemLabel="Yellow" itemValue="3"/>
+                <f:selectItem itemLabel="Blue" itemValue="4"/>                   
+            </h:selectOneMenu>
+            <f:facet name="footer">
+                <a4j:commandButton value="Process the image" render="img" execute="@form"/>
+            </f:facet>
+        </h:panelGrid>
+        <a4j:mediaOutput element="img" cacheable="false" session="true" id="img"
+            createContent="#{mediaBean.process}" value="#{mediaData}"
+            mimeType="image/jpeg" alt="img" />
+    </h:form>
+</ui:composition>

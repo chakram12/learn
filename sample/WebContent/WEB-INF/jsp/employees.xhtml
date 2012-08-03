@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"> 
+
+<h:head></h:head> 
+<body> 
+	<table border="1" align="left">
+	<thead><tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Email</th>
+	</tr></thead>
+	<ui:repeat var="employee" value="#{employees.employees}">
+	<tr>
+	
+		
+	
+		<td><h:outputText value="#{employee.id}"/></td>
+		<td><h:outputText value="#{employee.name}"/></td>
+		<td><h:outputText value="#{employee.email}" /></td>
+	</tr>
+	</ui:repeat>
+</table>
+		
+	<h:outputText value="kumarvayyala"/>
+	
+	
+</body> 
+</html>

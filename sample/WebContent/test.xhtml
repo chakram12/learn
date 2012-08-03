@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+
+
+<h:head></h:head> 
+
+<f:view>  
+    <h:form id="form1">    
+       
+      <h:outputText value="Enter your name:" rendered="#{empty foo.text}" id="prompt"/>
+      <h:outputText value="Hello #{foo.text}" rendered="#{!empty foo.text}" id="greeting"/>
+       
+      <h:inputText value="#{foo.text}" id="input_foo_text"/>
+      <h:message for="input_foo_text" styleClass="errorMessage"/>
+      <br/>
+      <h:commandButton value="Submit" action="/index1.jsp" id="submit_button"/>
+      <h:commandButton value="Goodbye" action="/finalgreeting.jsp" id="goodbye_button"/>
+
+</h:form>
+</f:view>
+
+
+
+
+
+
+</html>

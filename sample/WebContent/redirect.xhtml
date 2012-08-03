@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+ <script type="text/javascript" language="javascript">
+    function getInputText(text)
+    {
+      alert(text.value);
+    }
+  </script>
+ 
+ <style type="text/css">
+      .message { text-align: left;
+                 letter-spacing:5px;
+                 color:#000099
+      }
+      .message-overline { text-decoration:overline;
+      }
+      .message-font { font-family:georgia,garamond,serif;
+                      font-size:20px;
+                      font-style:italic;
+      }
+      
+      .odd { background-color: blue }
+    </style>
+ 
+ 
+
+
+
+</h:head> 
+<h:body> 
+	<h:form>
+		<p>Enter The FirstName:<h:inputText value="#{userBean.firstName }" styleClass="odd"  onkeyup="getInputText(this)"/></p>	
+		<p><h:button value="Http Get" outcome="page2" /></p>
+		 <p><h:commandButton action="page2?faces-redirect=true" value="Http with Redirect"  styleClass="message-overline"/></p>
+		 <p><h:commandButton action="page2" value="Http post"  styleClass="message-font"/></p>
+		
+			</h:form>
+</h:body> 
+</html>

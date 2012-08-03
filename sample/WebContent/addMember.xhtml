@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:rich="http://richfaces.org/rich">
+<h:head>
+<meta http-equiv="Content-Type" 
+        content="text/html; charset=iso-8859-1" />
+	<title>My First Facelet</title>
+</h:head>
+<body>
+<f:view>
+	<h:form>
+		<table align = "center">
+			<tr>
+				<td colspan = "3" style="font: bold; color:blue;font-size:medium">Member's Country</td>
+			</tr>
+			<tr>
+				<td colspan = "3" style="border: thick; color: y">
+					<h:selectOneMenu id="countrylist" value = "#{memberBean.mv.country}" >
+						<f:selectItem itemLabel="United States" itemValue="us" />
+						<f:selectItem itemLabel="United Kingdom" itemValue="uk" />
+					</h:selectOneMenu>	
+			    </td>
+			</tr>
+			<tr><td></td></tr>
+			<tr>
+				<td colspan = "3" style="font: bold; color:blue;font-size:medium">Member's Date of Birth</td>
+			</tr>
+			<tr>
+				<td>
+					<h:selectOneMenu id="month" value = "#{memberBean.mv.month}" >
+						<f:selectItem itemLabel="JAN" itemValue="jan" />
+						<f:selectItem itemLabel="FEB" itemValue="feb" />
+						<f:selectItem itemLabel="MAR" itemValue="mar" />
+						<f:selectItem itemLabel="APR" itemValue="apr" />
+						<f:selectItem itemLabel="MAY" itemValue="may" />
+						<f:selectItem itemLabel="JUN" itemValue="jun" />
+						<f:selectItem itemLabel="JUL" itemValue="jul" />
+						<f:selectItem itemLabel="AUG" itemValue="aug" />
+						<f:selectItem itemLabel="SEP" itemValue="sep" />
+						<f:selectItem itemLabel="OCT" itemValue="oct" />
+						<f:selectItem itemLabel="NOV" itemValue="nov" />
+						<f:selectItem itemLabel="DEC" itemValue="dec" />
+				</h:selectOneMenu>	
+				</td>
+				<td>
+					<h:selectOneMenu id="day" value = "#{memberBean.mv.day}">
+					    <f:selectItem itemLabel="1" itemValue="1" />
+						<f:selectItem itemLabel="2" itemValue="2" />
+						<f:selectItem itemLabel="3" itemValue="3" />
+						<f:selectItem itemLabel="4" itemValue="4" />
+						<f:selectItem itemLabel="5" itemValue="5" />
+						<f:selectItem itemLabel="6" itemValue="6" />
+						
+					</h:selectOneMenu>
+			    </td>
+			    <td>
+			    	<h:selectOneMenu id="year" value = "#{memberBean.mv.year}">
+						<f:selectItem itemLabel="1982" itemValue="1982" />
+						<f:selectItem itemLabel="1983" itemValue="1983" />
+						<f:selectItem itemLabel="1984" itemValue="1984" />
+						<f:selectItem itemLabel="1985" itemValue="1985" />
+						<f:selectItem itemLabel="1986" itemValue="1986" />
+						<f:selectItem itemLabel="1987" itemValue="1987" />
+						<f:selectItem itemLabel="1988" itemValue="1988" />
+						<f:selectItem itemLabel="1989" itemValue="1989" />
+						<f:selectItem itemLabel="1990" itemValue="1990" />
+						<f:selectItem itemLabel="1991" itemValue="1991" />
+				</h:selectOneMenu>	
+			   </td>
+			</tr>
+			<tr><td></td></tr>
+			<tr><td colspan = "3" style="font: bold; color:blue;font-size:medium">Member's Sign-in Name</td></tr>
+			<tr><td colspan = "3" ><h:inputText value = "#{memberBean.mv.signinName}" /></td></tr> 
+			<tr><td></td></tr>
+			<tr><td colspan = "3" style="font: bold; color:blue;font-size:medium">Member's Display Name (optional)</td></tr>
+			<tr><td colspan = "3"><h:inputText value = "#{memberBean.mv.displayName}" /></td></tr>
+			<tr><td></td></tr>
+			<tr><td colspan = "3" style="font: bold; color:blue;font-size:medium">Member's Email Address</td></tr>    
+			<tr><td colspan = "3"><h:inputText value = "#{memberBean.mv.email}" /></td></tr>
+			<tr><td></td></tr>    
+			<tr><td colspan = "3" style="font: bold; color:blue;font-size:medium">Member's Password</td></tr>
+			<tr><td colspan = "3"><h:inputSecret value = "#{memberBean.mv.password}" /></td></tr>
+			<tr><td></td></tr>  
+			<tr><td colspan = "3" style="font: bold; color:blue;font-size:medium">Confirm Member's Password</td></tr>
+			
+			<tr><td colspan = "3"><h:inputSecret value = "#{memberBean.mv.password}" /></td></tr>
+			
+			
+			<tr><td colspan = "3"><h:commandButton action = "#{memberBean.addProfile}" value="Add User" /></td></tr>
+			
+			
+		
+			
+		</table>
+	</h:form>
+</f:view>
+</body>
+</html>

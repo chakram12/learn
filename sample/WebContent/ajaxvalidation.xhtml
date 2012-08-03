@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:rich = "http://richfaces.org/rich" 
+      xmlns:a4j = "http://richfaces.org/a4j "> 
+      
+      <h:head>
+      	<style type="text/css">
+      		.rf-msg, .rf-msgs {
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 11px;
+    height: 18ex;
+}
+.rf-msg-err, .rf-msgs-err, .rf-msg-ftl, .rf-msgs-ftl, .rf-msg-inf, .rf-msgs-inf, .rf-msg-wrn, .rf-msgs-wrn, .rf-msg-ok, .rf-msgs-ok {
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: block;
+    padding-left: 20px;
+    padding-right: 2px;
+    vertical-align: middle;
+}
+
+button, input[type="reset"], input[type="submit"], input[type="button"] {
+    background-color: #BED6F8;
+    background-image: url("org.richfaces.images/buttonBackgroundImage-4.0.1-SNAPSHOT.png");
+    background-position: left top;
+    background-repeat: repeat-x;
+    border-color: #BED6F8;
+    border-width: 1px;
+    color: #000000;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 11px;
+}
+.rf-msg-err, .rf-msgs-err {
+    background-image: url("../../org.richfaces.images/error.png");
+    color: #FF0000;
+}
+.rf-msg-ftl, .rf-msgs-ftl {
+    background-image: url("../../org.richfaces.images/fatal.png");
+    color: #FF0000;
+}
+.rf-msg-inf, .rf-msgs-inf {
+    background-image: url("../../org.richfaces.images/info.png");
+    color: #000000;
+}
+.rf-msg-wrn, .rf-msgs-wrn {
+    background-image: url("../../org.richfaces.images/warning.png");
+    color: #FFE6E6;
+}
+.rf-msg-ok, .rf-msgs-ok {
+    background-image: url("../../org.richfaces.images/ok.png");
+    color: #000000;
+}
+.rf-msg-sum, .rf-msgs-sum {
+    display: inline;
+}
+.rf-msg-det, .rf-msgs-det {
+    display: inline;
+}
+      		
+      	
+      	</style>
+      
+      
+      </h:head>
+      
+      
+      
+      
+      <rich:panel>
+      		<f:facet name="header">
+      	 	<h:outputText value="Validation Form" />
+      		</f:facet>
+      	<h:form>
+      	 	<h:panelGrid columns="3">
+      	        <h:outputText value="Name:" />
+      	        <h:inputText label="Name"  id="name" required="true" value="#{userBean.name}" >
+      	        <f:validateLength minimum="3" />
+      	        </h:inputText>
+      	        <rich:message for="name" ajaxRendered="true" />
+      	        <h:outputText value="Job:" />
+      	        <h:inputText label="Job" id="job" required ="true" value="{userBean.job}" >
+      	        <f:validateLength minimum="10" maximum="50" />
+      	        </h:inputText>
+      	        <rich:message for="job" ajaxRendered="true" />
+      	        <h:outputText value="Address:" />
+      	        <h:inputText label="Address" id="address" required ="true" value="{userBean.address}" >
+      	        <f:validateLength minimum="10" maximum="50" />
+      	        </h:inputText>
+      	        <rich:message for="address" ajaxRendered="true"></rich:message>
+      	        <h:outputText value="Zip:" />
+      	        <h:inputText label="zip" id="zip" required="true" value="{userBean.zip}" >
+      	        <f:validateLength minimum="6" maximum="6" />
+      	        </h:inputText>
+      	        <rich:message for="zip" ajaxRendered="true" />
+      	       <f:facet name="footer">
+                    <h:commandButton value="Ajax Validate"/>
+                </f:facet>
+      	 	</h:panelGrid>
+      	</h:form>
+      </rich:panel>
+
+</ui:composition>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+         xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+
+
+
+  <h:form>
+  	<h:outputLink value="login.jsf"><h:outputText value="Go for login."/></h:outputLink>
+  	
+  		
+  			<h:commandLink action="login" value="login.jsf" >
+  				<h:outputText value="Go for login."/>
+  			</h:commandLink>
+  <a4j:commandLink value="Go for login" action="login.jsf" ></a4j:commandLink>
+  
+  
+   	<h:link value="link text" outcome="login"/>
+   	
+  
+
+  	
+  </h:form>
+   
+
+
+</html>

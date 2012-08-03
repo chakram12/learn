@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+    
+    <h:head>
+    	<style type="text/css">
+    		.rf-p {
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    color: #BED6F8;
+    padding: 1px;
+}
+.rf-p-hdr {
+    background-color: #BED6F8;
+    background-image: src=("/images/icons/copy.gif");
+    background-position: left top;
+    background-repeat: repeat-x;
+    border-color: #BED6F8;
+    border-style: solid;
+    border-width: 1px;
+    color: #000000;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px;
+}
+.rf-p-b {
+    color: #000000;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 11px;
+    padding: 10px;
+}
+
+    		
+    	</style>
+    </h:head>
+    
+    <h:form>
+        <rich:panel>
+            <f:facet name="header">
+                <h:outputText value="Change Demo Application Skin To: " />
+            </f:facet>
+            <h:panelGrid columns="2">
+                <h:link value="DeepMarine" includeViewParams="true">
+                    <a4j:param name="skin" value="deepMarine"
+                        assignTo="#{skinBean.skin}" />
+                </h:link>
+ 
+                <h:link value="BlueSky" includeViewParams="true">
+                    <a4j:param name="skin" value="blueSky" assignTo="#{skinBean.skin}" />
+                </h:link>
+            </h:panelGrid>
+ 
+        </rich:panel>
+    </h:form>
+</ui:composition>

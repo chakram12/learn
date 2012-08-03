@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Simple JSF2.0-AJAX example</title>
+    </h:head>
+    <h:body>
+
+        <h:form id="formID" prependId="false">
+
+            <h:outputScript name="jsf.js" library="javax.faces" target="head"/>
+            <h:outputText id="randomID" value="#{random.random}"/>
+
+            <h:commandButton id="buttonID" value="Random"
+                             onclick="jsf.ajax.request(this, event, {execute: this.id, render: 'randomID'}); return false;"/>
+        </h:form>
+
+    </h:body>
+</html>

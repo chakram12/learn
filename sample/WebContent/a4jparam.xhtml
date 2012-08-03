@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+    
+    <h:head>
+    	<style type="text/css">
+    		input, select, textarea, button, keygen, isindex, legend, a {
+    color: #000000;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 11px;
+}
+fieldset {
+    border-color: #BED6F8;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+}
+hr {
+    border-color: #BED6F8;
+    border-style: solid;
+    border-width: 1px;
+}
+a {
+    color: #0078D0;
+}
+a:hover {
+    color: #0090FF;
+}
+a:visited {
+    color: #0090FF;
+}
+input, select, textarea, button, keygen, isindex {
+    border-color: #BED6F8;
+    border-width: 1px;
+    color: #000000;
+}
+button, input[type="reset"], input[type="submit"], input[type="button"] {
+    background-color: #BED6F8;
+    background-image: url("org.richfaces.images/buttonBackgroundImage-4.0.1-SNAPSHOT.png");
+    background-position: left top;
+    background-repeat: repeat-x;
+    border-color: #BED6F8;
+    border-width: 1px;
+    color: #000000;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 11px;
+}
+button:hover, input[type="reset"]:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    background-image: url("org.richfaces.images/buttonHoverBackgroundImage-4.0.1-SNAPSHOT.png");
+    background-position: left bottom;
+    background-repeat: repeat-x;
+}
+button[disabled], input[type="reset"][disabled], input[type="submit"][disabled], input[type="button"][disabled] {
+    background-color: #CCCCCC;
+    background-image: url("org.richfaces.images/buttonDisabledBackgroundImage-4.0.1-SNAPSHOT.png");
+    background-position: left top;
+    border-color: #CCCCCC;
+    color: #8DB7F3;
+}
+textarea, input[type="text"], input[type="password"], select {
+    background-color: #FFFFFF;
+    background-image: url("org.richfaces.images/inputBackgroundImage-4.0.1-SNAPSHOT.png");
+    background-position: 1px 1px;
+    background-repeat: no-repeat;
+    border-color: #BED6F8;
+    border-style: solid;
+    border-width: 1px;
+    color: #000000;
+    font-family: Arial,Verdana,sans-serif;
+    font-size: 11px;
+}
+textarea[disabled], input[type="text"][disabled], input[type="password"][disabled], select[disabled] {
+    color: #BED6F8;
+    cursor: default;
+}
+    		
+    	</style>
+    </h:head>
+    
+    
+    <h:form>
+        <rich:panel>
+            <h:panelGrid columns="2">
+                <a4j:commandButton value="Set Name to Alex" render="rep">
+                    <a4j:param value="Alex" assignTo="#{userBean.firstName}" />
+                </a4j:commandButton>
+ 
+                <a4j:commandButton value="Set Name to John" render="rep">
+                    <a4j:param value="John" assignTo="#{userBean.firstName}" />
+                </a4j:commandButton>
+            </h:panelGrid>
+        </rich:panel>
+        <br />
+        <rich:panel>
+            <h:outputText id="rep" value="Selected Name:#{userBean.firstName}" />
+        </rich:panel>
+    </h:form>
+</ui:composition>

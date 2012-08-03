@@ -1,0 +1,17 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body> 
+ <h:form id = "AgeForm">
+ 	<h:inputText  id = "userAgeId" required="true" value="#{userBean1.userAge}"  converter="javax.faces.Integer"/>
+ 	<h:message showSummary="true" showDetail="false" for = "userAgeId" style="color:red; text-decoration:overline"/>
+ <br/>
+   <h:commandButton id="submit"  action="response?faces-redirect=true" value= "Submit Age" />
+ </h:form>
+
+</body> 
+</html>

@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>User Profile Page </title>
+	</h:head>
+	<body>
+		<f:view>
+		<center><h3 style="font: xx-large; color:lime">Member Details</h3>
+			<table border="2" style="border: medium;color: blue;">
+				<tr>
+					<td style="font: bold; color: red;">User Country</td>
+					<td style="font: large; color: green"><h:outputText value= "#{memberBean.profileDetails.country}" /></td>
+				</tr>
+				<tr>
+					<td style="font: bold; color: red;">Sign in Name</td>
+					<td><h:outputText value= "#{memberBean.profileDetails.signinName}" /></td>
+				</tr>
+				<tr>
+					<td style="font: bold; color: red;">Display Name</td>
+					<td><h:outputText value= "#{memberBean.profileDetails.displayName}" /></td>
+					</tr>
+					<tr>
+					<td style="font: bold; color: red;">Email Id</td>
+					<td><h:outputText value= "#{memberBean.profileDetails.email}" /></td>
+				</tr>
+			</table>
+			</center>
+		</f:view>
+	</body>
+</html>
